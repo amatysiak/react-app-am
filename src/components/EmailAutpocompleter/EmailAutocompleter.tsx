@@ -32,7 +32,7 @@ const EmailAutocompleter = (props: Props) => {
 
     const onKeyDownInputHandler = (e: React.KeyboardEvent<HTMLDivElement>) => {
         if (e.keyCode === 13 || e.keyCode === 9) { // enter or tab
-            addSelectedItem(activeInputValue);
+            activeInputValue && addSelectedItem(activeInputValue);
             setActiveInputValue("");
         }
     }
