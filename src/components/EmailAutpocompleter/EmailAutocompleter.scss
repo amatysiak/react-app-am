@@ -1,0 +1,155 @@
+$backgroundColor: #FDFDFD;
+$inputPlaceholderTextColor: #BDBDBD;
+$textColor: #1A1818;
+$activeEmailBgHover: #EDEDED;
+$activeEmailBgError: #F3B7BD;
+$activeSuggestionBgHover: #EFF5F9;
+
+.autocomplete-field {
+  align-items: center;
+  background-color: $backgroundColor;
+  border-radius: 8px;
+  color: $textColor;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "SFProText";
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.autocomplete-field__selected-value {
+  border-radius: 6px;
+  font-weight: bold;
+  letter-spacing: -0.32px;
+  margin: 13px 10px;
+  padding: 5px 28px 5px 8px;
+  position: relative;
+  word-break: break-word;
+
+  &:hover {
+    background-color: $activeEmailBgHover;
+
+    .autocomplete-field__icon {
+      cursor: pointer;
+    }
+  }
+
+  &--error {
+    background-color: $activeEmailBgError;
+  }
+}
+
+.autocomplete-field__icon {
+  font-style: normal;
+  position: absolute;
+  right: 8px;
+
+  &--icon-close {
+    &::before {
+      content: "\00d7";
+    }
+  }
+
+  &--icon-error-circle {
+    font-family: 'icons';
+    font-size: 16px;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &::before {
+      content: "\e900";
+      color: rgb(241, 81, 95);
+    }
+
+    &::after {
+      content: "\e901";
+      margin-left: -1em;
+      color: rgb(255, 255, 255);
+    }
+  }
+}
+
+.autocomplete-field__suggestions-area {
+  margin: 11px 10px;
+  min-width: 300px;
+  position: relative;
+}
+
+.autocomplete-field__input {
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+
+  &::-webkit-input-placeholder {
+    color: $inputPlaceholderTextColor;
+  }
+
+  &::-moz-placeholder {
+    color: $inputPlaceholderTextColor;
+  }
+
+  &::-ms-input-placeholder {
+    color: $inputPlaceholderTextColor;
+  }
+}
+
+.autocomplete-field__suggestions {
+  background-color: $backgroundColor;
+  border-radius: 4px;
+  box-shadow: 0 4px 14px #ccc; //rgba(26, 24, 24, 0.08);
+  left: 28px;
+  padding: 8px 5px 8px 0;
+  position: absolute !important;
+  top: 34px;
+  width: 294px !important;
+
+  & > div {
+    padding-bottom: 20px;
+
+    & > div:nth-child(3) {
+      z-index: 2;
+    }
+  }
+
+  &::before {
+    background: linear-gradient(180deg, $backgroundColor 0%, $backgroundColor 50.28%, rgba(253, 253, 253, 0) 100%);
+    border-radius: 4px 4px 0 0;
+    bottom: 8px;
+    content: "";
+    height: 36px;
+    position: absolute;
+    transform: rotate(-180deg);
+    width: 100%;
+    z-index: 1;
+  }
+
+  .autocomplete-field__suggestions-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 2px 0 6px;
+    position: relative;
+  }
+}
+
+.autocomplete-field__suggestion {
+  letter-spacing: -0.4px;
+  line-height: 24px;
+  padding: 9px 21px;
+  word-wrap: break-word;
+
+  &:not(.autocomplete-field__position--no-results):hover {
+    background-color: $activeSuggestionBgHover;
+    cursor: pointer;
+  }
+}
+
+.autocomplete-field__no-results {
+  position: absolute;
+}

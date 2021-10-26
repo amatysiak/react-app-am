@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./fonts/SFProText/SF-Pro-Text-Regular.ttf";
+import "./App.scss";
+
+import EmailAutocompleter from "./components/EmailAutpocompleter/EmailAutocompleter";
 
 function App() {
+  const [suggestions, setSuggestions] = useState<string[]>([""]);
+
+  useEffect(() => {
+    const url = "https://api.mocki.io/v2/2228417d/react-app-am-api";
+
+    const fetchData = async() => {
+      try {
+        fetch(url)
+            .then(response => response.json())
+            .then(json => setSuggestions(json.data));
+      } catch(error) {
+        console.log("Error: ", error);
+      }
+    }
+
+    fetchData();;
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <EmailAutocompleter suggestions={suggestions} />
   );
 }
 

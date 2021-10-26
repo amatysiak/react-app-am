@@ -2,45 +2,20 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## List of changes and improvements
+Adding tests\
+Displaying an error for the user - the case when the API connection doesn't work\
+Adding the possibility of using the autocompleter with the keyboard (e.g. selecting an item on the list with arrows)\
+Improvement of the mobile version\
+No results - adding styles\
+Checking if the screen area is sufficient to display the list with suggested emails - e.g. on some screens it may be necessary to display the list above the field\
+Adding translations\
+Adding Redux to an existing project
 
-In the project directory, you can run:
+## UI/UX Suggestions / To discuss
 
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+The currently selected item is not displayed on the list of suggested items - maybe a better solution would be to gray out this item on the list?\
+Currently, there is no limit to the added e-mails - maybe it is worth limiting their number?\
+Not using the "tab" button to select the entered item (it should be used only to switch between elements on the page)\
+Maybe it is worth highlighting fragments of items on the list that have the same text as the text entered in the input?\
+Should the list of suggested emails be hidden after clicking outside of its area?

@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "SFProText";
+  src: local("SFProText"), url("./fonts/SFProText/SF-Pro-Text-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "icons";
+  src:  url("./fonts/icons/icons.eot?69r7qn");
+  src:  url("./fonts/icons/icons.eot?69r7qn#iefix") format("embedded-opentype"),
+  url("./fonts/icons/icons.ttf?69r7qn") format("truetype"),
+  url("./fonts/icons/icons.woff?69r7qn") format("woff"),
+  url("./fonts/icons/icons.svg?69r7qn#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+body {
+  background-color: #E5E5E5;
+  padding: 50px;
+}
