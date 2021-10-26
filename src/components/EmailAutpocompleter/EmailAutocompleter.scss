@@ -144,7 +144,7 @@ $activeSuggestionBgHover: #EFF5F9;
   padding: 9px 21px;
   word-wrap: break-word;
 
-  &:not(.autocomplete-field__position--no-results):hover {
+  &:not(.autocomplete-field__suggestion--no-results):hover {
     background-color: $activeSuggestionBgHover;
     cursor: pointer;
   }
